@@ -1,4 +1,10 @@
 from flask import Flask, jsonify, request
+
+import sys
+import os.path
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '.'))
+
 from detect import predictor
 from nsfw_score import nsfw_predictor
 

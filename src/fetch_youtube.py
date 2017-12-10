@@ -3,7 +3,6 @@ import string
 import csv
 import requests
 import urllib2
-from lxml import html, etree
 import json
 import datetime, dateutil.parser
 import numpy as np

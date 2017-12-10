@@ -25,3 +25,4 @@ Werkzeug==0.11.15
 tqdm==4.19.4
 clarifai
 flask-cors
+xgboost

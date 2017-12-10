@@ -39,7 +39,7 @@ def predict_vid ():
 
     fetcher.get(channelID)
     y_pred = fetcher.predict(numWeeks,clickbait,porniness)
-    return jsonify({ "Views": y_pred })
+    return jsonify({ "views": round(y_pred,2) })
 
 if __name__ == "__main__":
     app.run()

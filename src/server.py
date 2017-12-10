@@ -8,6 +8,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '.'))
 
 from detect import predictor
 from nsfw_score import nsfw_predictor
+from fetch_youtube import fetcher
 
 
 app = Flask(__name__)
@@ -27,6 +28,18 @@ def nsfw_score ():
     headline = request.args.get("url", "")
     porniness = nsfw_predictor.predict(headline)
     return jsonify({ "porniness": round(porniness * 100, 2) })
+
+@app.route("/predictVid", methods=["GET"])
+@cross_origin()
+def predict_vid ():
+    channelID = request.args.get("channelID", "")
+    numWeeks = request.args.get("numWeeks","")
+    clickbait = request.args.get('clickbait',"")
+    porniness = request.args.get("porniness","")
+
+    fetcher.get(channelID)
+    y_pred = fetcher.predict(numWeeks,clickbait,porniness)
+    return jsonify({ "Views": y_pred })
 
 if __name__ == "__main__":
     app.run()

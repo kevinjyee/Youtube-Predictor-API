@@ -101,8 +101,9 @@ class YoutTubeFetcher(object):
 
 
         print X.columns.to_series().groupby(X.dtypes).groups
-        loaded_model = pickle.load(open("xgb001.pickle.dat", "rb"))
+        loaded_model = pickle.load(open("models/xgb001.pickle.dat", "rb"))
         y_pred = np.exp(loaded_model.predict(X))
+        print y_pred[0]
         return y_pred[0]
 
     def printStats(self):
@@ -115,3 +116,5 @@ class YoutTubeFetcher(object):
         print "Channel Age in Weeks", self.ChannelAge
 
 fetcher = YoutTubeFetcher(key)
+fetcher.get(channel)
+fetcher.predict(5,0.1,0.1)

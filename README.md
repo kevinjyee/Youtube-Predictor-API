@@ -1,4 +1,4 @@
-# Clickbait Detector
+# Youtubue-Predictor API
 
 YouTube Predictor API built on top of Rahul Kapoor's Clickbait Detector 
 

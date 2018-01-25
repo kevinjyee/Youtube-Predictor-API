@@ -1,8 +1,7 @@
 # Clickbait Detector
 
-Detects clickbait headlines using deep learning.
+YouTube Predictor API built on top of Rahul Kapoor's Clickbait Detector 
 
-Find the Chrome Extension [here](https://chrome.google.com/webstore/detail/this-is-clickbait/ppklhdlfnadnlnllnenceabhldpnafjm) ( built by [rahulkapoor90](https://github.com/rahulkapoor90/This-is-Clickbait) )
 
 ## Requirements
 - Python 2.7.12
